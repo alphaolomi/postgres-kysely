@@ -20,7 +20,7 @@ Simple Next.js template that uses [Vercel Postgres](https://vercel.com/postgres)
 
 ## Demo
 
-https://postgres-kysely.vercel.app/
+https://postgres-kysely-iota.vercel.app/
 
 ## How to Use
 
@@ -37,7 +37,7 @@ Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_mediu
 Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [pnpm](https://pnpm.io/installation) to bootstrap the example:
 
 ```bash
-pnpm create next-app --example https://github.com/vercel/examples/tree/main/storage/postgres-kysely
+pnpm create next-app --example https://github.com/alphaolomi/postgres-kysely
 ```
 
 Once that's done, copy the .env.example file in this directory to .env.local (which will be ignored by Git):

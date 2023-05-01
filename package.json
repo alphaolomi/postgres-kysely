@@ -10,6 +10,7 @@
     "@types/node": "18.15.11",
     "@types/react": "18.0.37",
     "@types/react-dom": "18.0.11",
+    "@vercel/kv": "0.1.0-canary.4",
     "@vercel/postgres": "0.1.0-canary.29",
     "@vercel/postgres-kysely": "0.1.0-canary.27",
     "autoprefixer": "10.4.14",

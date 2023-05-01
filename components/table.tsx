@@ -16,7 +16,7 @@ export default async function Table() {
         "Table does not exist, creating and seeding it with dummy data now..."
       );
       // Table is not created yet
-      await seed();
+      // await seed();
       startTime = Date.now();
       users = await db.selectFrom("users").selectAll().execute();
     } else {

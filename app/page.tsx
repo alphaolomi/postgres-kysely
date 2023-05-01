@@ -4,6 +4,7 @@ import { Suspense } from 'react'
 import Table from '@/components/table'
 import TablePlaceholder from '@/components/table-placeholder'
 import ExpandingArrow from '@/components/expanding-arrow'
+import ViewCounter from "@/components/view-counter";
 
 export const runtime = 'edge'
 export const preferredRegion = 'home'
@@ -26,6 +27,10 @@ export default function Home() {
         {/* @ts-expect-error Async Server Component */}
         <Table />
       </Suspense>
+      <Suspense>
+            {/* @ts-expect-error Async Server Component */}
+            <ViewCounter />
+          </Suspense>
       <p className="font-light text-gray-600 w-full max-w-lg text-center mt-6">
         <Link
           href="https://vercel.com/postgres"
