@@ -1,23 +1,34 @@
-import { db } from '@/lib/kysely'
+'use client'
+
 import { redirect } from 'next/navigation'
-
-async function create(formData: FormData) {
-  'use server'
-  const name = formData.get('name') as string
-  const email = formData.get('email') as string
-  const image = formData.get('image') as string
-
-  const result = await db.insertInto('users').values({ name, email, image }).executeTakeFirst()
-
-  console.log("insertId", result.insertId)
-
-  redirect(`/`)
-}
+import { useState, useTransition } from 'react'
 
 export default function CreatePage() {
+  const [isPending, startTransition] = useTransition()
+  const [isFetching, setIsFetching] = useState(false)
+
+  const isMutating = isFetching || isPending;
+
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    setIsFetching(true)
+    const formData = new FormData(event.currentTarget)
+   const response = await fetch('/api/users', {
+      method: 'POST',
+      body: formData,
+    })
+    if (response.ok) {
+      const user = await response.json()
+      alert(`User ${user.name} created!`)
+      startTransition(() => {
+        redirect('/')
+      })
+    }
+  }
   return (
     <div>
-      <form action={create} method='post' >
+      <form onSubmit={handleSubmit}>
         <h1>Add User</h1>
         <label htmlFor='name'>
           Name:
@@ -31,7 +42,11 @@ export default function CreatePage() {
           Image:
           <input type='url' name='image' id='image' />
         </label>
-        <button type='submit'>Submit</button>
+        <button type='submit'
+          disabled={isMutating} 
+        >
+          {isMutating ? 'Loading...' : 'Add'}
+        </button>
       </form>
     </div>
   )
