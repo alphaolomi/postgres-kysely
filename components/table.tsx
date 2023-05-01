@@ -3,6 +3,7 @@ import { timeAgo } from "@/lib/utils";
 import Image from "next/image";
 import RefreshButton from "./refresh-button";
 import { seed } from "@/lib/seed";
+import Link from "next/link";
 
 export default async function Table() {
   let users;
@@ -59,6 +60,12 @@ export default async function Table() {
             <p className="text-sm text-gray-500">{timeAgo(user.createdAt)}</p>
           </div>
         ))}
+      </div>
+      {/* Add User link button */}
+      <div className="flex justify-end mt-4">
+        <Link href="/create" className="text-sm font-medium underline underline-offset-4 hover:text-black transition-colors">
+            Add User
+        </Link>
       </div>
     </div>
   );
