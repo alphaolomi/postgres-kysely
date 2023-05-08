@@ -1,23 +1,6 @@
----
-name: Vercel Postgres + Kysely Next.js Starter
-slug: postgres-kysely
-description: Simple Next.js template that uses Vercel Postgres as the database and Kysely as the ORM.
-framework: Next.js
-useCase: Starter
-css: Tailwind
-database: Vercel Postgres
-deployUrl: https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fexamples%2Ftree%2Fmain%2Fstorage%2Fpostgres-kysely&project-name=postgres-kysely&repository-name=postgres-kysely&demo-title=Vercel%20Postgres%20%2B%20Kysely%20Next.js%20Starter&demo-description=Simple%20Next.js%20template%20that%20uses%20Vercel%20Postgres%20as%20the%20database%20and%20Kysely%20as%20the%20ORM.&demo-url=https%3A%2F%2Fpostgres-kysely.vercel.app%2F&demo-image=https%3A%2F%2Fpostgres-kysely.vercel.app%2Fopengraph-image.png&stores=%5B%7B"type"%3A"postgres"%7D%5D
-demoUrl: https://postgres-kysely.vercel.app/
-relatedTemplates:
-  - postgres-starter
-  - postgres-prisma
-  - postgres-drizzle
----
-
 # Vercel Postgres + Kysely Next.js Starter
 
 Simple Next.js template that uses [Vercel Postgres](https://vercel.com/postgres) as the database and [Kysely](https://kysely.dev/) as the ORM.
-
 ## Demo
 
 https://postgres-kysely-iota.vercel.app/
